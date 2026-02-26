@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU LMS - Activity #1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="activity1.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <img src="image/logo.png" class="logo-img" alt="QCU Logo">
+    <div class="logo-text">QCU <span>LMS</span></div>
+  </div>
+  <div class="topbar-center">
+    <div class="label">Classes (Activity)</div>
+    <div id="datetime" class="datetime"></div>
+  </div>
+  <div class="topbar-right">
+    <div class="notif-btn" title="Notifications">🔔</div>
+    <div class="user-pill" onclick="window.location.href='viewacc.html'" title="View Account">
+      <div class="avatar">J</div>
+      <span>Jheriemy</span>
+      <span class="arrow">▾</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <button class="add-class-btn" id="add-class-btn">
+      <div class="add-icon">+</div>
+      <span>Add New Class</span>
+    </button>
+
+    <div class="nav-item" onclick="window.location.href='home.html'">
+      <span class="nav-icon">⊞</span>
+      Dashboard
+    </div>
+    <div class="nav-item" onclick="window.location.href='announcement.html'">
+      <span class="nav-icon">📢</span>
+      Announcement
+    </div>
+    <div class="nav-item active" onclick="window.location.href='class.html'">
+      <span class="nav-icon">🏫</span>
+      View Classes
+      <span class="chevron">▾</span>
+    </div>
+    <div class="class-list">
+      <div class="class-list-item active">CC101</div>
+    </div>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="logout-card">
+      <div class="mascot">📚</div>
+      <p>It's been a long day,<br>hasn't it?</p>
+      <button class="logout-btn" id="logout-btn">Log Out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="content-layout">
+
+      <!-- LEFT: ACTIVITY DETAIL -->
+      <div class="quiz-detail">
+
+        <!-- ACTIVITY HEADER -->
+        <div class="quiz-header">
+          <button class="back-btn" onclick="history.back()">&#9664;</button>
+          <div class="quiz-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="quiz-title-block">
+            <h2 class="quiz-title">Activity # 1</h2>
+            <div class="quiz-meta">
+              <span class="professor">Professor's Name</span>
+              <span id="quiz-datetime" class="quiz-dt"></span>
+            </div>
+            <div class="quiz-points">100 Points</div>
+          </div>
+          <div class="quiz-right">
+            <span class="no-due">NO DUE DATE</span>
+            <button class="more-btn" title="More options">&#8943;</button>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- INSTRUCTIONS -->
+        <div class="quiz-instructions">
+          <p>A bright and visionary day to you! &#128396;&#10024;</p>
+          <br>
+          <p>I am kindly asking for a few minutes of your time to answer a short survey related to my undergraduate thesis that I am currently conducting. My project is entitled:</p>
+          <br>
+          <p>&#128400; "ASTRIMARE: Space&#8211;Marine Technology and Innovation Complex Advancing Research and Development in Xploration Systems, Technological Innovation, and Education&#8211;Cultural Integration through Regenerative&#8211;Adaptive Architecture towards National Scientific Excellence." &#128640;</p>
+          <br>
+          <p>You may access the survey through this link:<br>
+            &#128279; <a href="https://forms.gle/sBEDdQCu55phojYt5" target="_blank">https://forms.gle/sBEDdQCu55phojYt5</a>
+          </p>
+          <br>
+          <p>Your insights will be a great help in shaping this study &#8212; every response brings us closer to building a future where architecture connects the depths of the sea and the vastness of space. &#127754;</p>
+          <br>
+          <p>Your participation is deeply appreciated. May your ideas flow freely and your inspiration reach beyond the stars. &#127776;&#128760;</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- CLASS COMMENTS -->
+        <div class="comments-section">
+          <div class="comments-label">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Class Comments
+          </div>
+          <div class="add-comment-row">
+            <div class="comment-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <input class="comment-input" type="text" placeholder="Add class comment" id="class-comment">
+            <button class="comment-send" id="send-comment" title="Send">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </div>
+          <div class="comment-list" id="comment-list"></div>
+        </div>
+
+      </div><!-- /.quiz-detail -->
+
+      <!-- RIGHT PANEL -->
+      <div class="right-panel">
+
+        <!-- YOUR WORK -->
+        <div class="work-card">
+          <div class="work-header">
+            <span class="work-title">Your work</span>
+            <span class="work-status assigned">Assigned</span>
+          </div>
+          <button class="btn-add-create" onclick="document.getElementById('file-upload').click()">+ Add or create</button>
+          <input type="file" id="file-upload" style="display:none" onchange="handleFileUpload(this)">
+          <div class="file-list" id="file-list"></div>
+          <button class="btn-mark-done">Mark as done</button>
+        </div>
+
+        <!-- PRIVATE COMMENTS -->
+        <div class="private-card">
+          <div class="private-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+            </svg>
+            Private Comments
+          </div>
+          <button class="private-comment-btn" id="private-comment-trigger">Add comment to Professor's Name</button>
+          <div class="private-input-wrap" id="private-input-wrap" style="display:none;">
+            <input class="private-input" type="text" placeholder="Private comment..." id="private-comment">
+            <button class="comment-send small" id="send-private">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /.right-panel -->
+    </div>
+  </main>
+</div>
+
+<!-- JOIN CLASS MODAL -->
+<div class="join-backdrop" id="join-backdrop">
+  <div class="join-modal">
+    <h2 class="join-title">JOIN CLASS</h2>
+    <p class="join-subtitle">Please enter the Class Code</p>
+    <p class="join-hint">Ask your teacher for the class code, then enter it here.</p>
+    <input type="text" class="join-input" id="join-input" placeholder="CLASS CODE" maxlength="20">
+    <div class="join-actions">
+      <button class="join-cancel" id="join-cancel">Cancel</button>
+      <button class="join-confirm" id="join-confirm">Join</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOUT MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-icon">&#128075;</div>
+    <h3 class="modal-title">Leaving so soon?</h3>
+    <p class="modal-msg">Are you sure you want to log out of QCU LMS?</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel">Stay</button>
+      <button class="modal-confirm" id="modal-confirm">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<script src="activity1.js"></script>
+</body>
+</html>

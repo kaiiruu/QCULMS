@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU LMS - Midterm Examination</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="examanswer.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <img src="image/logo.png" class="logo-img" alt="QCU Logo">
+    <div class="logo-text">QCU <span>LMS</span></div>
+  </div>
+  <div class="topbar-center">
+    <div class="label">Classes (Examination)</div>
+    <div id="datetime" class="datetime"></div>
+  </div>
+  <div class="topbar-right">
+    <div class="notif-btn" title="Notifications">🔔</div>
+    <div class="user-pill" onclick="window.location.href='viewacc.html'" title="View Account">
+      <div class="avatar">J</div>
+      <span>Jheriemy</span>
+      <span class="arrow">▾</span>
+    </div>
+  </div>
+</header>
+
+<!-- BACK -->
+<div class="back-wrap">
+  <button class="back-btn" onclick="history.back()">&#9664;</button>
+</div>
+
+<!-- EXAM FORM -->
+<div class="quiz-wrap">
+
+  <!-- HEADER CARD -->
+  <div class="quiz-header-card">
+    <h1 class="quiz-main-title">Midterm Examination</h1>
+    <div class="quiz-header-divider"></div>
+    <p class="quiz-instruction">Answer this quiz honestly. "honesty is the first chapter in the book of wisdom" (Thomas Jefferson)</p>
+    <div class="quiz-header-divider"></div>
+    <p class="required-note">* Indicates required question</p>
+  </div>
+
+  <!-- QUESTIONS -->
+  <form id="exam-form">
+
+    <div class="question-card">
+      <div class="q-required">*</div>
+      <p class="q-text">1. What does the term "Techniques or Methods of Presenting the Subject" mean in art?</p>
+      <div class="q-divider"></div>
+      <div class="options">
+        <label class="option"><input type="radio" name="q1" value="A"> A. The materials used in making art</label>
+        <label class="option"><input type="radio" name="q1" value="B"> B. The way an artist represents or shows the subject in an artwork</label>
+        <label class="option"><input type="radio" name="q1" value="C"> C. The size and shape of the painting</label>
+        <label class="option"><input type="radio" name="q1" value="D"> D. The location where art is displayed</label>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-required">*</div>
+      <p class="q-text">2. Which of the following best describes "Chiaroscuro" in art?</p>
+      <div class="q-divider"></div>
+      <div class="options">
+        <label class="option"><input type="radio" name="q2" value="A"> A. The use of bright, vivid colors to express emotion</label>
+        <label class="option"><input type="radio" name="q2" value="B"> B. The use of strong contrast between light and dark to give a three-dimensional effect</label>
+        <label class="option"><input type="radio" name="q2" value="C"> C. A technique of painting with watercolors on dry paper</label>
+        <label class="option"><input type="radio" name="q2" value="D"> D. The practice of using only geometric shapes in art</label>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-required">*</div>
+      <p class="q-text">3. What is the term for a painting done on fresh, moist plaster?</p>
+      <div class="q-divider"></div>
+      <div class="options">
+        <label class="option"><input type="radio" name="q3" value="A"> A. Tempera</label>
+        <label class="option"><input type="radio" name="q3" value="B"> B. Fresco</label>
+        <label class="option"><input type="radio" name="q3" value="C"> C. Encaustic</label>
+        <label class="option"><input type="radio" name="q3" value="D"> D. Gouache</label>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-required">*</div>
+      <p class="q-text">4. Which art movement is characterized by dreamlike imagery and the exploration of the unconscious mind?</p>
+      <div class="q-divider"></div>
+      <div class="options">
+        <label class="option"><input type="radio" name="q4" value="A"> A. Impressionism</label>
+        <label class="option"><input type="radio" name="q4" value="B"> B. Cubism</label>
+        <label class="option"><input type="radio" name="q4" value="C"> C. Surrealism</label>
+        <label class="option"><input type="radio" name="q4" value="D"> D. Baroque</label>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-required">*</div>
+      <p class="q-text">5. In art, what does "foreshortening" refer to?</p>
+      <div class="q-divider"></div>
+      <div class="options">
+        <label class="option"><input type="radio" name="q5" value="A"> A. Making a figure appear shorter by distorting proportions in perspective</label>
+        <label class="option"><input type="radio" name="q5" value="B"> B. The use of short, quick brushstrokes</label>
+        <label class="option"><input type="radio" name="q5" value="C"> C. Cutting a canvas to reduce its size</label>
+        <label class="option"><input type="radio" name="q5" value="D"> D. A technique for creating texture using crumpled paper</label>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- ACTIONS -->
+  <div class="quiz-actions">
+    <button class="btn-clear" id="btn-clear">Clear</button>
+    <button class="btn-submit" id="btn-submit">SUBMIT</button>
+  </div>
+
+</div>
+
+<!-- SUBMIT CONFIRM MODAL -->
+<div class="modal-backdrop" id="submit-modal">
+  <div class="modal">
+    <div class="modal-icon">📝</div>
+    <h3 class="modal-title">Submit Exam?</h3>
+    <p class="modal-msg">Are you sure you want to submit your answers? This cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel">Go Back</button>
+      <button class="modal-confirm" id="modal-confirm">Submit</button>
+    </div>
+  </div>
+</div>
+
+<script src="examanswer.js"></script>
+</body>
+</html>

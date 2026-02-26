@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU LMS Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <img src="image/logo.png" class="logo-img" alt="QCU Logo">
+    <div class="logo-text">QCU <span>LMS</span></div>
+  </div>
+  <div class="topbar-center">
+    <div class="label">Dashboard</div>
+    <div id="datetime" class="datetime"></div>
+  </div>
+  <div class="topbar-right">
+    <div class="notif-btn" title="Notifications">🔔</div>
+    <div class="user-pill" onclick="window.location.href='viewacc.html'" style="cursor:pointer;" title="View Account">
+      <div class="avatar">J</div>
+      <span>Jheriemy</span>
+      <span class="arrow">▾</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <button class="add-class-btn" id="add-class-btn">
+      <div class="add-icon">+</div>
+      <span>Add New Class</span>
+    </button>
+
+    <div class="nav-item active">
+      <span class="nav-icon">⊞</span>
+      Dashboard
+    </div>
+    <div class="nav-item" onclick="window.location.href='announcement.html'">
+      <span class="nav-icon">📢</span>
+      Announcement
+    </div>
+    <div class="nav-item" onclick="window.location.href='class.html'">
+      <span class="nav-icon">🏫</span>
+      View Classes
+      <span class="chevron">▾</span>
+    </div>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="logout-card">
+      <div class="mascot">📚</div>
+      <p>It's been a long day,<br>hasn't it?</p>
+      <button class="logout-btn" id="logout-btn">Log Out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- HOME BANNER -->
+    <div class="home">
+      <div class="home-text">
+        <h1>Hi, Jheriemy!</h1>
+        <p>Ready to start your day with productivity?</p>
+      </div>
+      <div class="home-illustration">📖</div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" onclick="setTab(this, 'recent')">Recent</button>
+      <button class="tab" onclick="setTab(this, 'favorite')">Favorite</button>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div class="cards-grid" id="cards-grid"></div>
+
+  </main>
+</div>
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-icon">👋</div>
+    <h3 class="modal-title">Leaving so soon?</h3>
+    <p class="modal-msg">Are you sure you want to log out of QCU LMS?</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel">Stay</button>
+      <button class="modal-confirm" id="modal-confirm">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<!-- JOIN CLASS MODAL -->
+<div class="join-backdrop" id="join-backdrop">
+  <div class="join-modal">
+    <h2 class="join-title">JOIN CLASS</h2>
+    <p class="join-subtitle">Please enter the Class Code</p>
+    <p class="join-hint">Ask your teacher for the class code, then enter it here.</p>
+    <input type="text" class="join-input" id="join-input" placeholder="CLASS CODE" maxlength="20">
+    <div class="join-actions">
+      <button class="join-cancel" id="join-cancel">Cancel</button>
+      <button class="join-confirm" id="join-confirm">Join</button>
+    </div>
+  </div>
+</div>
+
+<script src="home.js"></script>
+</body>
+</html>
