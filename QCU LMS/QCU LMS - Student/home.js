@@ -77,14 +77,14 @@ function setTab(el, tab) {
 
 // Class data
 const recent = [
-  { subject: 'CS 301',   title: 'Data Structures & Algorithms',  teacher: 'Dr. Santos',     init: 'S', color: '#8B0000', badge: 'Active',   badgeColor: '#fff3f3', badgeText: '#8B0000' },
-  { subject: 'IT 201',   title: 'Web Systems & Technologies',     teacher: 'Prof. Garcia',   init: 'G', color: '#C9A84C', badge: 'Due Soon', badgeColor: '#fffbea', badgeText: '#8a6800' },
-  { subject: 'CS 401',   title: 'Software Engineering',           teacher: 'Dr. Reyes',      init: 'R', color: '#2d6a4f', badge: 'Active',   badgeColor: '#f0faf4', badgeText: '#2d6a4f' },
-  { subject: 'MATH 301', title: 'Discrete Mathematics',           teacher: 'Prof. Cruz',     init: 'C', color: '#1d4e89', badge: 'Active',   badgeColor: '#eef4ff', badgeText: '#1d4e89' },
-  { subject: 'IT 301',   title: 'Database Management Systems',    teacher: 'Dr. Lim',        init: 'L', color: '#6d2077', badge: 'Active',   badgeColor: '#faf0ff', badgeText: '#6d2077' },
-  { subject: 'CS 302',   title: 'Operating Systems',              teacher: 'Prof. Dela Cruz', init: 'D', color: '#b5451b', badge: 'New',     badgeColor: '#fff8f5', badgeText: '#b5451b' },
-  { subject: 'IT 101',   title: 'Introduction to Computing',      teacher: 'Dr. Tan',        init: 'T', color: '#0d6986', badge: 'Active',   badgeColor: '#edfaff', badgeText: '#0d6986' },
-  { subject: 'GE 301',   title: 'Purposive Communication',        teacher: 'Prof. Aquino',   init: 'A', color: '#555555', badge: 'Active',   badgeColor: '#f5f5f5', badgeText: '#555555' },
+  { subject: 'CC 104',   title: 'Data Structures & Algorithms',  teacher: 'Prof. Manandeg',     init: 'M', color: '#8B0000', badge: 'Active',   badgeColor: '#fff3f3', badgeText: '#8B0000' },
+  { subject: 'WS 101',   title: 'Web Systems & Technologies',     teacher: 'Prof. Rachel',   init: 'R', color: '#C9A84C', badge: 'Due Soon', badgeColor: '#fffbea', badgeText: '#8a6800' },
+  { subject: 'SE 101',   title: 'Software Engineering',           teacher: 'Prof. Kira',      init: 'K', color: '#2d6a4f', badge: 'Active',   badgeColor: '#f0faf4', badgeText: '#2d6a4f' },
+  { subject: 'NET 102', title: 'Networking',           teacher: 'Prof. Luisito',     init: 'L', color: '#1d4e89', badge: 'Active',   badgeColor: '#eef4ff', badgeText: '#1d4e89' },
+  { subject: 'IT 301',   title: 'Database Management Systems',    teacher: 'Prof. Benj',        init: 'L', color: '#6d2077', badge: 'Active',   badgeColor: '#faf0ff', badgeText: '#6d2077' },
+  { subject: 'PF 101',   title: 'Operating Systems',              teacher: 'Prof. Adelan', init: 'A', color: '#b5451b', badge: 'New',     badgeColor: '#fff8f5', badgeText: '#b5451b' },
+  { subject: 'CC 101',   title: 'Introduction to Computing',      teacher: 'Prof. Tanjente',        init: 'T', color: '#0d6986', badge: 'Active',   badgeColor: '#edfaff', badgeText: '#0d6986' },
+  { subject: 'ENG 1',   title: 'Purposive Communication',        teacher: 'Prof. Reyes',   init: 'A', color: '#555555', badge: 'Active',   badgeColor: '#f5f5f5', badgeText: '#555555' },
 ];
 
 const favorite = recent.filter((_, i) => [0, 2, 3].includes(i));
