@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU LMS - Classes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="exam-teacher1.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <img src="image/logo.png" class="logo-img" alt="QCU Logo">
+    <div class="logo-text">QCU <span>LMS</span></div>
+  </div>
+  <div class="topbar-center">
+    <div class="label">Classes Create Form</div>
+    <div id="datetime" class="datetime"></div>
+  </div>
+  <div class="topbar-right">
+    <div class="notif-btn" title="Notifications">🔔</div>
+    <div class="user-pill" onclick="window.location.href='viewacc1.html'" title="View Account">
+      <div class="avatar">P</div>
+      <span>Professor</span>
+      <span class="arrow">▾</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <main class="main">
+
+<div class="course-grade-container">
+
+  <!-- PAGE HEADER -->
+  <div class="course-grade-header">
+
+    <div class="page-left">
+      <button class="back-btn" onclick="history.back()">&#9664;</button>
+<div class="quiz-container">
+
+<h1 contenteditable="true">Title</h1>
+
+<input class="quiz-desc" placeholder="Title description">
+
+<div id="question-area">
+
+<div class="question">
+
+<h3></h3>
+
+<div class="option">
+<input type="radio" name="correct">
+<input type="text" placeholder="Option A">
+</div>
+
+<div class="option">
+<input type="radio" name="correct">
+<input type="text" placeholder="Option B">
+</div>
+
+<div class="option">
+<input type="radio" name="correct">
+<input type="text" placeholder="Option C">
+</div>
+
+<div class="option">
+<input type="radio" name="correct">
+<input type="text" placeholder="Add option">
+</div>
+
+</div>
+
+</div>
+
+<button id="addQuestion">➕ Add Question</button>
+
+<div class="quiz-actions">
+<button class="clear">CLEAR</button>
+<button class="publish">PUBLISH</button>
+</div>
+
+</div>
+
+<script src="exam-teacher1.js"></script>
+</body>
+</html>

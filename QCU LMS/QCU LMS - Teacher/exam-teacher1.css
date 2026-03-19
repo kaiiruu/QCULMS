@@ -1,0 +1,187 @@
+:root{
+--maroon:#8B0000;
+--gold:#C9A84C;
+--bg:#f5f4f2;
+--text:#1a1a1a;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'DM Sans',sans-serif;
+background:var(--bg);
+color:var(--text);
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* TOPBAR */
+
+.topbar{
+background:var(--maroon);
+height:70px;
+display:flex;
+align-items:center;
+padding:0 28px;
+justify-content:space-between;
+border-bottom:3px solid var(--gold);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-img{
+height:44px;
+}
+
+.logo-text{
+font-family:'Playfair Display',serif;
+font-size:22px;
+color:#fff;
+}
+
+.logo-text span{
+color:var(--gold);
+}
+
+.topbar-center{
+text-align:center;
+}
+
+.topbar-center .label{
+font-size:13px;
+font-weight:600;
+color:#f0d080;
+text-transform:uppercase;
+}
+
+.datetime{
+font-size:12px;
+color:rgba(255,255,255,0.6);
+}
+
+.topbar-right{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.user-pill{
+display:flex;
+align-items:center;
+gap:10px;
+background:rgba(255,255,255,0.12);
+padding:6px 14px 6px 6px;
+border-radius:30px;
+cursor:pointer;
+}
+
+.avatar{
+width:30px;
+height:30px;
+border-radius:50%;
+background:var(--gold);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+font-size:13px;
+color:var(--maroon);
+}
+
+/* MAIN */
+
+.main{
+padding:40px;
+display:flex;
+justify-content:center;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+border:none;
+background:none;
+font-size:22px;
+cursor:pointer;
+}
+
+/* QUIZ BUILDER */
+
+.quiz-container{
+width:700px;
+background:#f5e9e6;
+padding:25px;
+border-radius:10px;
+}
+
+.quiz-container h1{
+margin-bottom:15px;
+}
+
+.quiz-desc{
+width:100%;
+padding:10px;
+margin-bottom:20px;
+border:none;
+border-bottom:1px solid #ccc;
+}
+
+.question{
+background:#f3dbd6;
+padding:15px;
+border-radius:8px;
+}
+
+.option{
+display:flex;
+gap:10px;
+margin:8px 0;
+}
+
+.option input[type="text"]{
+flex:1;
+border:none;
+border-bottom:1px solid #aaa;
+background:transparent;
+}
+
+#addQuestion{
+margin-top:15px;
+padding:8px 14px;
+border-radius:20px;
+border:none;
+cursor:pointer;
+}
+
+.quiz-actions{
+margin-top:20px;
+display:flex;
+justify-content:flex-end;
+gap:10px;
+}
+
+.clear{
+background:#ddd;
+padding:8px 14px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.publish{
+background:#1e6c8f;
+color:white;
+padding:8px 16px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU LMS - Course Calendar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="course-grade-teacher.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <img src="image/logo.png" class="logo-img" alt="QCU Logo">
+    <div class="logo-text">QCU <span>LMS</span></div>
+  </div>
+  <div class="topbar-center">
+    <div class="label">Course Grade</div>
+    <div id="datetime" class="datetime"></div>
+  </div>
+  <div class="topbar-right">
+    <div class="notif-btn" title="Notifications">🔔</div>
+    <div class="user-pill" onclick="window.location.href='viewacc1.html'" title="View Account">
+      <div class="avatar">P</div>
+      <span>Professor</span>
+      <span class="arrow">▾</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <button class="add-class-btn" id="add-class-btn">
+  <div class="add-icon">+</div>
+  <span>Create New Class</span>
+</button>
+
+    <div class="nav-item" onclick="window.location.href='teacher.html'">
+      <span class="nav-icon">⊞</span>
+      Dashboard
+    </div>
+    <div class="nav-item" onclick="window.location.href='announcement1.html'">
+      <span class="nav-icon">📢</span>
+      Announcement
+    </div>
+    <div class="nav-item active" onclick="window.location.href='class1.html'">
+      <span class="nav-icon">🏫</span>
+      View Classes
+      <span class="chevron">▾</span>
+    </div>
+    <div class="class-list">
+      <div class="class-list-item active" onclick="window.location.href='class1.html'">CC101</div>
+    </div>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="logout-card">
+      <div class="mascot">📚</div>
+      <p>It's been a long day,<br>hasn't it?</p>
+      <button class="logout-btn" id="logout-btn">Log Out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+
+<div class="course-grade-container">
+
+  <!-- PAGE HEADER -->
+  <div class="course-grade-header">
+
+    <div class="page-left">
+      <button class="back-btn" onclick="history.back()">&#9664;</button>
+      <h2 class="page-title">Course Grade</h2>
+    </div>
+
+    <button class="change-grade-btn" id="change-grade-btn">
+  Change Course Grade Percentage
+</button>
+
+  </div>
+
+  <div class="title-divider"></div>
+
+
+  <!-- GRADE TABLE -->
+  <div class="grade-table-wrap">
+
+    <table class="grade-table">
+
+      <thead>
+
+        <tr class="header-main">
+          <th rowspan="2">NAME</th>
+          <th colspan="2">ACTIVITY</th>
+          <th colspan="2">ASSIGNMENT</th>
+          <th colspan="2">QUIZ</th>
+          <th colspan="2">EXAM</th>
+          <th colspan="2">PROJECT</th>
+          <th rowspan="2">TOTAL GRADE</th>
+        </tr>
+
+        <tr class="header-sub">
+          <th id="activity-percent">20%</th>
+          <th>Score</th>
+
+          <th id="assignment-percent">10%</th>
+          <th>Score</th>
+
+          <th id="quiz-percent">10%</th>
+          <th>Score</th>
+
+          <th id="exam-percent">40%</th>
+          <th>Score</th>
+
+          <th id="project-percent">20%</th>
+          <th>Score</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Araullo, Jheriemy N.</td>
+
+          <td>100</td>
+          <td>20</td>
+
+          <td>20</td>
+          <td>10</td>
+
+          <td>15</td>
+          <td>8</td>
+
+          <td>50</td>
+          <td>36</td>
+
+          <td>100</td>
+          <td>19</td>
+
+          <td class="total">92.5</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+</main>
+
+<!-- JOIN CLASS MODAL -->
+<div class="join-backdrop" id="create-backdrop">
+  <div class="join-modal">
+
+    <h2 class="join-title">CREATE CLASS</h2>
+
+    <input type="text" class="join-input" id="class-name" placeholder="Class Name">
+    <input type="text" class="join-input" id="class-section" placeholder="Section">
+    <input type="text" class="join-input" id="class-subject" placeholder="Subject">
+    <input type="text" class="join-input" id="class-room" placeholder="Room">
+
+    <div class="join-actions">
+      <button class="join-cancel" id="create-cancel">Cancel</button>
+      <button class="join-confirm" id="create-confirm">Create</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- LOGOUT MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-icon">👋</div>
+    <h3 class="modal-title">Leaving so soon?</h3>
+    <p class="modal-msg">Are you sure you want to log out of QCU LMS?</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel">Stay</button>
+      <button class="modal-confirm" id="modal-confirm">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<div class="grade-backdrop" id="grade-backdrop">
+
+<div class="grade-modal">
+
+<div class="grade-title">Change Grade Percentage</div>
+
+<div class="grade-row">
+<label>Activity</label>
+<input id="grade-activity" value="20">
+</div>
+
+<div class="grade-row">
+<label>Assignment</label>
+<input id="grade-assignment" value="10">
+</div>
+
+<div class="grade-row">
+<label>Quiz</label>
+<input id="grade-quiz" value="10">
+</div>
+
+<div class="grade-row">
+<label>Exam</label>
+<input id="grade-exam" value="40">
+</div>
+
+<div class="grade-row">
+<label>Project</label>
+<input id="grade-project" value="20">
+</div>
+
+<div class="add-category">➕ Add category</div>
+
+<div class="grade-actions">
+<button class="grade-cancel" id="grade-cancel">Cancel</button>
+<button class="grade-save" id="grade-save">Save Changes</button>
+</div>
+
+</div>
+
+</div>
+
+<script src="course-grade-teacher.js"></script>
+</body>
+</html>

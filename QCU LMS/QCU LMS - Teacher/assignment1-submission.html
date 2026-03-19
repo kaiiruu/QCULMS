@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU LMS - Activity #1 Submissions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assignment1-submission.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <img src="image/logo.png" class="logo-img" alt="QCU Logo">
+    <div class="logo-text">QCU <span>LMS</span></div>
+  </div>
+  <div class="topbar-center">
+    <div class="label">Classes (Assignment)</div>
+    <div id="datetime" class="datetime"></div>
+  </div>
+  <div class="topbar-right">
+    <div class="notif-btn" title="Notifications">🔔</div>
+    <div class="user-pill" onclick="window.location.href='viewacc1.html'" title="View Account">
+      <div class="avatar">P</div>
+      <span>Professor</span>
+      <span class="arrow">▾</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <button class="add-class-btn" id="add-class-btn">
+      <div class="add-icon">+</div>
+      <span>Create New Class</span>
+    </button>
+
+    <div class="nav-item" onclick="window.location.href='teacher.html'">
+      <span class="nav-icon">⊞</span>
+      Dashboard
+    </div>
+    <div class="nav-item" onclick="window.location.href='announcement1.html'">
+      <span class="nav-icon">📢</span>
+      Announcement
+    </div>
+    <div class="nav-item active" onclick="window.location.href='class1.html'">
+      <span class="nav-icon">🏫</span>
+      View Classes
+      <span class="chevron">▾</span>
+    </div>
+    <div class="class-list">
+      <div class="class-list-item active">CC101</div>
+    </div>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="logout-card">
+      <div class="mascot">📚</div>
+      <p>It's been a long day,<br>hasn't it?</p>
+      <button class="logout-btn" id="logout-btn">Log Out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOP ROW: title + filter -->
+    <div class="top-row">
+      <div class="top-left">
+        <div class="page-header">
+          <button class="back-btn" onclick="history.back()">&#9664;</button>
+          <h2 class="page-title">Submissions (Assignment)</h2>
+        </div>
+        <div class="title-divider"></div>
+      </div>
+
+      <!-- FILTER DROPDOWN -->
+      <div class="filter-wrap">
+        <button class="filter-btn" id="filter-btn">
+          <span id="filter-label">Submissions</span>
+          <span class="chevron-icon">▾</span>
+        </button>
+        <div class="filter-dropdown" id="filter-dropdown">
+          <div class="filter-option" data-value="Activity">Activity</div>
+          <div class="filter-option active" data-value="Assignment">Assignment</div>
+          <div class="filter-option" data-value="Quiz">Quiz</div>
+          <div class="filter-option" data-value="Examination">Examination</div>
+          <div class="filter-option" data-value="Project">Project</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVITY META ROW -->
+    <div class="activity-meta-row">
+      <div>
+        <div class="activity-name">Assignment # 1</div>
+        <div class="activity-sub-meta" id="assign-meta"></div>
+      </div>
+      <div class="meta-right">
+        <span class="no-due">NO DUE DATE</span>
+        <button class="more-btn" title="More options">&#8943;</button>
+      </div>
+    </div>
+
+    <!-- SUBMITTED HEADING -->
+    <div class="submitted-heading">Submitted</div>
+
+    <!-- STUDENT LIST -->
+    <div class="student-list" id="student-list">
+      <div class="student-row">
+        <span class="student-name">Jheriemy Araullo</span>
+        <span class="student-submitted-time" id="st-time-0"></span>
+      </div>
+      <div class="student-row">
+        <span class="student-name">Kurt Jomari Francisco</span>
+        <span class="student-submitted-time" id="st-time-1"></span>
+      </div>
+      <div class="student-row">
+        <span class="student-name">John Wick</span>
+        <span class="student-submitted-time" id="st-time-2"></span>
+      </div>
+      <div class="student-row">
+        <span class="student-name">Student Name</span>
+        <span class="student-submitted-time" id="st-time-3"></span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- CREATE CLASS MODAL -->
+<div class="join-backdrop" id="create-backdrop">
+  <div class="join-modal">
+    <h2 class="join-title">CREATE CLASS</h2>
+    <input type="text" class="join-input" id="class-name" placeholder="Class Name">
+    <input type="text" class="join-input" id="class-section" placeholder="Section">
+    <input type="text" class="join-input" id="class-subject" placeholder="Subject">
+    <input type="text" class="join-input" id="class-room" placeholder="Room">
+    <div class="join-actions">
+      <button class="join-cancel" id="create-cancel">Cancel</button>
+      <button class="join-confirm" id="create-confirm">Create</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOUT MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-icon">👋</div>
+    <h3 class="modal-title">Leaving so soon?</h3>
+    <p class="modal-msg">Are you sure you want to log out of QCU LMS?</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel">Stay</button>
+      <button class="modal-confirm" id="modal-confirm">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<!-- STUDENT DETAIL PANEL -->
+<div class="panel-overlay" id="panel-overlay">
+  <div class="student-panel" id="student-panel">
+
+    <!-- Panel Header -->
+    <div class="panel-header">
+      <button class="panel-back-btn" id="panel-close">&#9664;</button>
+      <div class="panel-title-block">
+        <div class="panel-title">Assignment # 1</div>
+        <div class="panel-meta" id="panel-meta"></div>
+      </div>
+    </div>
+
+    <!-- Student Name + Submitted Time -->
+    <div class="panel-student-row">
+      <span class="panel-student-name" id="panel-student-name">Student Name</span>
+      <span class="panel-submitted-time" id="panel-submitted-time"></span>
+    </div>
+
+    <!-- Student Message -->
+    <div class="panel-message">
+      Good morning po, here's my assignment po.
+    </div>
+
+    <!-- Attached File -->
+    <a class="panel-attachment" href="Assign.pdf" target="_blank">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+      </svg>
+      Assign.pdf
+    </a>
+
+    <div class="panel-divider"></div>
+
+    <!-- Private Comments -->
+    <div class="panel-private-header">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+      </svg>
+      Private Comments
+    </div>
+    <button class="panel-private-btn" id="panel-private-trigger">Add comment to Student's Name</button>
+    <div class="panel-private-input-wrap" id="panel-private-wrap" style="display:none;">
+      <input class="panel-private-input" type="text" placeholder="Private comment..." id="panel-private-input">
+      <button class="panel-send-btn" id="panel-send-private">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script src="assignment1-submission.js"></script>
+</body>
+</html>

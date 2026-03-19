@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU LMS - Classes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="quiz-teacher.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <img src="image/logo.png" class="logo-img" alt="QCU Logo">
+    <div class="logo-text">QCU <span>LMS</span></div>
+  </div>
+  <div class="topbar-center">
+    <div class="label">Classes Quiz</div>
+    <div id="datetime" class="datetime"></div>
+  </div>
+  <div class="topbar-right">
+    <div class="notif-btn" title="Notifications">🔔</div>
+    <div class="user-pill" onclick="window.location.href='viewacc1.html'" title="View Account">
+      <div class="avatar">P</div>
+      <span>Professor</span>
+      <span class="arrow">▾</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <button class="add-class-btn" id="add-class-btn">
+      <div class="add-icon">+</div>
+      <span>Create New Class</span>
+    </button>
+
+    <div class="nav-item" onclick="window.location.href='home.html'">
+      <span class="nav-icon">⊞</span>
+      Dashboard
+    </div>
+    <div class="nav-item" onclick="window.location.href='announcement.html'">
+      <span class="nav-icon">📢</span>
+      Announcement
+    </div>
+    <div class="nav-item active">
+      <span class="nav-icon">🏫</span>
+      View Classes
+      <span class="chevron">▾</span>
+    </div>
+
+    <!-- CLASS LIST under View Classes -->
+    <div class="class-list">
+      <div class="class-list-item active" data-class="CC101" onclick="selectClass('CC101', this)">CC101</div>
+    </div>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="logout-card">
+      <div class="mascot">📚</div>
+      <p>It's been a long day,<br>hasn't it?</p>
+      <button class="logout-btn" id="logout-btn">Log Out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+<div class="activity-top">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+
+    <div class="page-left">
+      <button class="back-btn" onclick="history.back()">&#9664;</button>
+      <h2 class="page-title">Quiz</h2>
+    </div>
+
+    <button class="create-activity-btn" onclick="openPostModal()">
++ Create New Quiz
+</button>
+
+  </div>
+
+  <div class="title-divider"></div>
+
+    <!-- COURSE CONTENT -->
+    <div id="tab-course" class="tab-content active">
+
+  <div class="activity-stream">
+    </div>
+
+
+<!-- ACTIVITY LIST -->
+    <div class="quiz-list" id="activity-list">
+
+      <div class="quiz-row" onclick="window.location.href='quiz-teacher1.html'">
+        <div class="quiz-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="quiz-info">
+          <div class="quiz-name">Quiz #1</div>
+          <div class="quiz-meta" id="activity-meta-1"></div>
+        </div>
+        <div class="quiz-due">NO DUE DATE</div>
+        <button class="quiz-more" title="More options" onclick="event.stopPropagation()">&#8943;</button>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+  
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- CREATE CLASS MODAL -->
+<div class="join-backdrop" id="create-backdrop">
+  <div class="join-modal">
+    <h2 class="join-title">CREATE CLASS</h2>
+
+    <input type="text" class="join-input" id="class-name" placeholder="Class Name">
+    <input type="text" class="join-input" id="class-section" placeholder="Section">
+    <input type="text" class="join-input" id="class-subject" placeholder="Subject">
+    <input type="text" class="join-input" id="class-room" placeholder="Room">
+
+    <div class="join-actions">
+      <button class="join-cancel" id="create-cancel">Cancel</button>
+      <button class="join-confirm" id="create-confirm">Create</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOUT MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-icon">👋</div>
+    <h3 class="modal-title">Leaving so soon?</h3>
+    <p class="modal-msg">Are you sure you want to log out of QCU LMS?</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel">Stay</button>
+      <button class="modal-confirm" id="modal-confirm">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<div class="post-modal" id="postModal">
+
+<div class="post-box">
+
+<div class="post-header">
+<span>Post</span>
+<a href="create-form.html" class="create-form-link">Create Form</a>
+</div>
+
+<div class="post-editor" id="editor" contenteditable="true">
+
+</div>
+
+<div class="editor-toolbar">
+
+<button type="button" onclick="formatText('bold')">
+<span class="material-icons">format_bold</span>
+</button>
+
+<button type="button" onclick="formatText('italic')">
+<span class="material-icons">format_italic</span>
+</button>
+
+<button type="button" onclick="formatText('underline')">
+<span class="material-icons">format_underlined</span>
+</button>
+
+<button type="button" onclick="formatText('insertUnorderedList')">
+<span class="material-icons">format_list_bulleted</span>
+</button>
+
+</div>
+
+<div class="post-actions">
+
+<div class="attachment-group">
+<button onclick="attachFile()">
+<span class="material-icons">attach_file</span>
+</button>
+
+<button onclick="insertLink()">
+<span class="material-icons">link</span>
+</button>
+</div>
+
+<div class="post-buttons">
+<button onclick="closePostModal()">Cancel</button>
+<button onclick="submitPost()">Post</button>
+</div>
+<input type="file" id="fileInput" hidden>
+</div>
+
+<script src="quiz-teacher.js"></script>
+</body>
+</html>

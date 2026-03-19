@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU LMS Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <div class="logo-circle">QCU</div>
+    <div class="logo-text">QCU <span>LMS</span></div>
+  </div>
+  <div class="topbar-center">
+    <div class="label">Dashboard</div>
+    <div id="datetime" class="datetime"></div>
+  </div>
+  <div class="topbar-right">
+    <div class="notif-btn" title="Notifications">🔔</div>
+    <div class="user-pill" onclick="window.location.href='viewacc1.html'" style="cursor:pointer;" title="View Account">
+    <div class="avatar">P</div>
+      <span>Professor</span>
+      <span class="arrow">▾</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <button class="add-class-btn" id="add-class-btn">
+      <div class="add-icon">+</div>
+      <span>Create New Class</span>
+    </button>
+
+    <div class="nav-item active" onclick="window.location.href='teacher.html'">
+      <span class="nav-icon">⊞</span>
+      Dashboard
+    </div>
+   <div class="nav-item" onclick="window.location.href='announcement1.html'">
+      <span class="nav-icon">📢</span>
+      Announcement
+    </div>
+    <div class="nav-item" onclick="window.location.href='class1.html'">
+      <span class="nav-icon">🏫</span>
+      View Classes
+      <span class="chevron">▾</span>
+    </div>
+    
+    <div class="sidebar-spacer"></div>
+
+    <div class="logout-card">
+      <div class="mascot">📚</div>
+      <p>It's been a long day,<br>hasn't it?</p>
+      <button class="logout-btn" id="logout-btn">Log Out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- HOME BANNER -->
+    <div class="home">
+      <div class="home-text">
+        <h1>Hi, Professor!</h1>
+        <p>Ready to start your day with productivity?</p>
+      </div>
+      <div class="home-illustration">📖</div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" onclick="setTab(this, 'recent')">Recent</button>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div class="cards-grid" id="cards-grid"></div>
+
+  </main>
+</div>
+<div class="join-backdrop" id="create-backdrop">
+  <div class="join-modal">
+    <h2 class="join-title">CREATE CLASS</h2>
+
+    <input type="text" class="join-input" id="class-name" placeholder="Class Name">
+    <input type="text" class="join-input" id="class-section" placeholder="Section">
+    <input type="text" class="join-input" id="class-subject" placeholder="Subject">
+    <input type="text" class="join-input" id="class-room" placeholder="Room">
+
+    <div class="join-actions">
+      <button class="join-cancel" id="create-cancel">Cancel</button>
+      <button class="join-confirm" id="create-confirm">Create</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-icon">👋</div>
+    <h3 class="modal-title">Leaving so soon?</h3>
+    <p class="modal-msg">Are you sure you want to log out of QCU LMS?</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" id="modal-cancel">Stay</button>
+      <button class="modal-confirm" id="modal-confirm">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<script src="teacher.js"></script>
+</body>
+</html>
