@@ -138,7 +138,27 @@
             <span class="work-title">Your work</span>
             <span class="work-status assigned">Assigned</span>
           </div>
-          <button class="btn-add-create">+ Add or create</button>
+          <div class="add-create-wrap" id="add-create-wrap">
+            <button class="btn-add-create" id="btn-add-create">+ Add or create</button>
+            <div class="add-create-menu" id="add-create-menu" style="display:none;">
+              <div class="add-create-section-label">ATTACH</div>
+              <label class="add-menu-item" id="menu-file">
+                <input type="file" id="file-upload" style="display:none;" multiple>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                File
+              </label>
+              <div class="add-create-section-label" style="margin-top:6px;">CREATE</div>
+              <button class="add-menu-item" id="menu-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                Link
+              </button>
+            </div>
+          </div>
+          <div class="attached-files" id="attached-files"></div>
+          <div class="link-input-wrap" id="link-input-wrap">
+            <input class="link-input" type="url" placeholder="Paste link here..." id="link-input">
+            <button class="btn-add-link" id="btn-add-link">Add</button>
+          </div>
           <button class="btn-mark-done">Mark as done</button>
         </div>
 
@@ -151,6 +171,7 @@
             Private Comments
           </div>
           <button class="private-comment-btn" id="private-comment-trigger">Add comment to Professor's Name</button>
+          <div class="private-comment-list" id="private-comment-list"></div>
           <div class="private-input-wrap" id="private-input-wrap" style="display:none;">
             <input class="private-input" type="text" placeholder="Private comment..." id="private-comment">
             <button class="comment-send small" id="send-private">

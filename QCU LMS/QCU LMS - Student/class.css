@@ -1,8 +1,8 @@
 :root {
-  --maroon: #8B0000;
-  --maroon-dark: #6a0000;
-  --gold: #C9A84C;
-  --gold-light: #f0d080;
+  --maroon: #1a4a6b;
+  --maroon-dark: #133a56;
+  --gold: #C9873A;
+  --gold-light: #f0c090;
   --bg: #f5f4f2;
   --card-bg: #ffffff;
   --text: #1a1a1a;
@@ -41,6 +41,7 @@ body {
   object-fit: contain;
   flex-shrink: 0;
 }
+
 
 .logo-text {
   font-family: 'Playfair Display', serif;
@@ -132,7 +133,7 @@ body {
 .nav-item:hover { background: #fdf5e6; color: var(--maroon); }
 .nav-item.active {
   background: var(--maroon); color: #fff;
-  box-shadow: 0 4px 14px rgba(139,0,0,0.25);
+  box-shadow: 0 4px 14px rgba(26,74,107,0.25);
 }
 .nav-item.active .nav-icon { color: var(--gold); }
 .nav-icon { font-size: 20px; width: 24px; text-align: center; }
@@ -277,7 +278,7 @@ body {
   color: #fff;
   border-color: var(--maroon);
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(139,0,0,0.15);
+  box-shadow: 0 10px 28px rgba(26,74,107,0.15);
 }
 
 /* ── PEOPLE TAB ── */
@@ -329,7 +330,7 @@ body {
   margin-bottom: 14px; letter-spacing: 2px;
 }
 .join-subtitle { font-size: 16px; font-weight: 700; color: var(--maroon); margin-bottom: 8px; }
-.join-hint { font-size: 14px; color: rgba(100,30,30,0.8); margin-bottom: 28px; line-height: 1.5; }
+.join-hint { font-size: 14px; color: rgba(10,40,70,0.8); margin-bottom: 28px; line-height: 1.5; }
 
 .join-input {
   width: 100%; padding: 16px 20px; border-radius: 12px; border: none;
@@ -339,13 +340,13 @@ body {
   text-align: center; letter-spacing: 2px; outline: none;
   margin-bottom: 32px; transition: background 0.2s, box-shadow 0.2s;
 }
-.join-input::placeholder { color: rgba(100,30,30,0.45); letter-spacing: 2px; font-weight: 500; }
-.join-input:focus { background: rgba(255,255,255,0.85); box-shadow: 0 0 0 3px rgba(139,0,0,0.2); }
+.join-input::placeholder { color: rgba(10,40,70,0.45); letter-spacing: 2px; font-weight: 500; }
+.join-input:focus { background: rgba(255,255,255,0.85); box-shadow: 0 0 0 3px rgba(26,74,107,0.2); }
 
 .join-actions { display: flex; justify-content: flex-end; align-items: center; gap: 28px; }
 .join-cancel {
   background: transparent; border: none; font-size: 16px; font-weight: 600;
-  color: rgba(80,20,20,0.8); cursor: pointer;
+  color: rgba(10,40,70,0.8); cursor: pointer;
   font-family: 'DM Sans', sans-serif; transition: color 0.18s; padding: 8px 4px;
 }
 .join-cancel:hover { color: var(--maroon); }
@@ -417,8 +418,7 @@ body {
   :root { --sidebar-w: 210px; }
   .main { padding: 20px 22px; }
   .topbar { height: 62px; }
-  .logo-circle { width: 38px; height: 38px; font-size: 12px; }
-  .logo-text { font-size: 19px; }
+    .logo-text { font-size: 19px; }
   .course-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .banner-text h1 { font-size: 28px; }
   .banner-illustration { font-size: 60px; }

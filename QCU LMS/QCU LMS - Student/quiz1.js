@@ -38,25 +38,100 @@ sendComment.addEventListener('click', postComment);
 commentInput.addEventListener('keydown', e => { if (e.key === 'Enter') postComment(); });
 
 // ── PRIVATE COMMENTS ──
-const privateTrigger  = document.getElementById('private-comment-trigger');
-const privateWrap     = document.getElementById('private-input-wrap');
-const privateInput    = document.getElementById('private-comment');
-const sendPrivate     = document.getElementById('send-private');
+const privateTrigger = document.getElementById('private-comment-trigger');
+const privateWrap    = document.getElementById('private-input-wrap');
+const privateInput   = document.getElementById('private-comment');
+const sendPrivate    = document.getElementById('send-private');
+const privateList    = document.getElementById('private-comment-list');
 
 privateTrigger.addEventListener('click', () => {
   privateWrap.style.display = 'flex';
-  privateTrigger.style.display = 'none';
   privateInput.focus();
 });
 
-sendPrivate.addEventListener('click', () => {
-  if (!privateInput.value.trim()) return;
+function postPrivate() {
+  const text = privateInput.value.trim();
+  if (!text) return;
+  const now = new Date();
+  const h = now.getHours() % 12 || 12;
+  const m = String(now.getMinutes()).padStart(2,'0');
+  const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+  const timeStr = `${h}:${m} ${ampm}`;
+
+  const msg = document.createElement('div');
+  msg.className = 'private-msg';
+  msg.innerHTML = `<div class="p-name">Jheriemy Araullo</div>${text}<div class="p-time">${timeStr}</div>`;
+  privateList.appendChild(msg);
   privateInput.value = '';
-  privateWrap.style.display = 'none';
-  privateTrigger.style.display = 'block';
-  privateTrigger.textContent = '✓ Comment sent to Professor\'s Name';
-  privateTrigger.style.color = '#2d6a4f';
+  msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+sendPrivate.addEventListener('click', postPrivate);
+privateInput.addEventListener('keydown', e => { if (e.key === 'Enter') postPrivate(); });
+
+
+// ── ADD OR CREATE ──
+const btnAddCreate   = document.getElementById('btn-add-create');
+const addCreateMenu  = document.getElementById('add-create-menu');
+const fileUpload     = document.getElementById('file-upload');
+const menuFile       = document.getElementById('menu-file');
+const menuLink       = document.getElementById('menu-link');
+const attachedFiles  = document.getElementById('attached-files');
+const linkInputWrap  = document.getElementById('link-input-wrap');
+const linkInput      = document.getElementById('link-input');
+const btnAddLink     = document.getElementById('btn-add-link');
+
+// Toggle dropdown
+btnAddCreate.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const isOpen = addCreateMenu.style.display !== 'none';
+  addCreateMenu.style.display = isOpen ? 'none' : 'block';
 });
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!document.getElementById('add-create-wrap').contains(e.target)) {
+    addCreateMenu.style.display = 'none';
+  }
+});
+
+// File attach
+fileUpload.addEventListener('change', () => {
+  Array.from(fileUpload.files).forEach(file => addAttachment(file.name, 'file'));
+  fileUpload.value = '';
+  addCreateMenu.style.display = 'none';
+});
+
+// Link option
+menuLink.addEventListener('click', () => {
+  addCreateMenu.style.display = 'none';
+  linkInputWrap.style.display = 'flex';
+  linkInput.focus();
+});
+
+btnAddLink.addEventListener('click', () => {
+  const url = linkInput.value.trim();
+  if (!url) return;
+  addAttachment(url, 'link');
+  linkInput.value = '';
+  linkInputWrap.style.display = 'none';
+});
+
+linkInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') btnAddLink.click();
+  if (e.key === 'Escape') linkInputWrap.style.display = 'none';
+});
+
+function addAttachment(name, type) {
+  const item = document.createElement('div');
+  item.className = 'attached-item';
+  const icon = type === 'file'
+    ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>`
+    : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`;
+  item.innerHTML = `${icon}<span class="file-name">${name}</span><button class="remove-file" title="Remove">&times;</button>`;
+  item.querySelector('.remove-file').addEventListener('click', () => item.remove());
+  attachedFiles.appendChild(item);
+}
 
 // ── MARK AS DONE ──
 const btnMark = document.querySelector('.btn-mark-done');

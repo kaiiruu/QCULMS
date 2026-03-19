@@ -1,8 +1,8 @@
 :root {
-  --maroon: #8B0000;
-  --maroon-dark: #6a0000;
-  --gold: #C9A84C;
-  --gold-light: #f0d080;
+  --maroon: #1a4a6b;
+  --maroon-dark: #133a56;
+  --gold: #C9873A;
+  --gold-light: #f0c090;
   --bg: #f5f4f2;
   --text: #1a1a1a;
   --text-muted: #888;
@@ -47,6 +47,7 @@ body {
   object-fit: contain;
   flex-shrink: 0;
 }
+
 
 .logo-text {
   font-family: 'Playfair Display', serif;
@@ -231,7 +232,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 6px 24px rgba(139,0,0,0.3);
+  box-shadow: 0 6px 24px rgba(26,74,107,0.3);
 }
 
 .avatar-initials {
@@ -399,7 +400,7 @@ body {
   background: var(--maroon);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(139,0,0,0.2);
+  box-shadow: 0 6px 18px rgba(26,74,107,0.2);
 }
 
 /* ── RESPONSIVE ── */
@@ -436,8 +437,7 @@ body {
   .field-box, .field-input { font-size: 13px; padding: 10px 14px; min-height: 40px; }
   .field-label { font-size: 12px; }
   .topbar { height: 62px; }
-  .logo-circle { width: 38px; height: 38px; font-size: 12px; }
-  .logo-text { font-size: 19px; }
+    .logo-text { font-size: 19px; }
   .class-chip { font-size: 19px; padding: 17px 32px; min-width: 140px; }
   .enrolled-title { font-size: 14px; }
 }
