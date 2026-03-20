@@ -41,9 +41,9 @@ function postComment() {
   item.className = 'comment-item';
 
   item.innerHTML = `
-    <div class="comment-avatar">J</div>
+    <div class="comment-avatar">P</div>
     <div class="comment-bubble">
-      <div class="c-name">Jheriemy Araullo</div>
+      <div class="c-name">Professor</div>
       ${text}
     </div>
   `;
@@ -285,7 +285,7 @@ modalBackdrop.classList.remove('active');
 }
 
 if(modalConfirm){
-modalConfirm.addEventListener('click',()=>window.location.href='index.html');
+modalConfirm.addEventListener('click',()=>window.location.href='../QCULMS-Student/index.html');
 }
 
 

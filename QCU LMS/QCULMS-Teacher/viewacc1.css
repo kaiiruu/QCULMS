@@ -1,14 +1,14 @@
 :root {
-  --maroon: #8B0000;
-  --maroon-dark: #6a0000;
-  --gold: #C9A84C;
-  --gold-light: #f0d080;
+  --teal: #1a4a6b;
+  --teal-dark: #133a56;
+  --gold: #C9873A;
+  --gold-light: #f0c090;
   --bg: #f5f4f2;
+  --card-bg: #ffffff;
   --text: #1a1a1a;
   --text-muted: #888;
-  --field-bg: #e8e5e0;
+  --sidebar-w: 260px;
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -22,7 +22,7 @@ body {
 
 /* ── TOPBAR ── */
 .topbar {
-  background: var(--maroon);
+  background: var(--teal);
   height: 70px;
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 14px;
   font-weight: 600;
-  color: var(--maroon);
+  color: var(--teal);
   border: 2px solid var(--gold-light);
 }
 
@@ -106,7 +106,7 @@ body {
   width: 8px; height: 8px;
   background: var(--gold);
   border-radius: 50%;
-  border: 2px solid var(--maroon);
+  border: 2px solid var(--teal);
 }
 .notif-btn:hover { background: rgba(255,255,255,0.2); }
 
@@ -133,7 +133,7 @@ body {
   justify-content: center;
   font-weight: 700;
   font-size: 13px;
-  color: var(--maroon);
+  color: var(--teal);
 }
 .user-pill span { font-size: 14px; color: #fff; font-weight: 500; }
 .user-pill .arrow { color: rgba(255,255,255,0.6); font-size: 11px; }
@@ -165,9 +165,9 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.07);
 }
 .back-btn:hover {
-  background: var(--maroon);
+  background: var(--teal);
   color: #fff;
-  border-color: var(--maroon);
+  border-color: var(--teal);
 }
 
 /* ── PROFILE CARD ── */
@@ -196,14 +196,14 @@ body {
   gap: 6px;
 }
 .edit-btn:hover {
-  background: var(--maroon);
+  background: var(--teal);
   color: #fff;
-  border-color: var(--maroon);
+  border-color: var(--teal);
 }
 .edit-btn.active {
-  background: var(--maroon);
+  background: var(--teal);
   color: #fff;
-  border-color: var(--maroon);
+  border-color: var(--teal);
 }
 
 /* ── CARD INNER LAYOUT ── */
@@ -234,7 +234,7 @@ body {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: var(--maroon);
+  background: var(--teal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -273,8 +273,8 @@ body {
   transition: all 0.2s;
 }
 .camera-btn:hover {
-  background: var(--maroon);
-  border-color: var(--maroon);
+  background: var(--teal);
+  border-color: var(--teal);
 }
 
 /* ── DIVIDER ── */
@@ -321,7 +321,7 @@ body {
 
 .field-input {
   background: #fff;
-  border: 2px solid var(--maroon);
+  border: 2px solid var(--teal);
   border-radius: 10px;
   padding: 11px 16px;
   font-size: 14px;
@@ -355,13 +355,13 @@ body {
   transition: all 0.2s;
   color: var(--text);
 }
-.btn-cancel:hover { border-color: var(--maroon); color: var(--maroon); }
+.btn-cancel:hover { border-color: var(--teal); color: var(--teal); }
 
 .btn-save {
   padding: 10px 28px;
   border-radius: 10px;
   border: none;
-  background: var(--maroon);
+  background: var(--teal);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -369,7 +369,7 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
-.btn-save:hover { background: var(--maroon-dark); }
+.btn-save:hover { background: var(--teal-dark); }
 
 /* ── ENROLLED CLASSES ── */
 .enrolled-section { padding-bottom: 40px; }
@@ -380,7 +380,7 @@ body {
   color: var(--text);
   margin-bottom: 16px;
   padding-bottom: 8px;
-  border-bottom: 2px solid var(--maroon);
+  border-bottom: 2px solid var(--teal);
   display: inline-block;
 }
 
@@ -404,7 +404,7 @@ body {
   letter-spacing: 1px;
 }
 .class-chip:hover {
-  background: var(--maroon);
+  background: var(--teal);
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(139,0,0,0.2);
@@ -448,4 +448,8 @@ body {
   .logo-text { font-size: 19px; }
   .class-chip { font-size: 19px; padding: 17px 32px; min-width: 140px; }
   .enrolled-title { font-size: 14px; }
+}
+.password-group .password-input{
+  width:100%;
+  margin-top:8px;
 }

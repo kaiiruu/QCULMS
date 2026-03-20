@@ -1,5 +1,5 @@
 :root{
---maroon:#8B0000;
+--teal: #1a4a6b;
 --gold:#C9A84C;
 --bg:#f5f4f2;
 --text:#1a1a1a;
@@ -23,7 +23,7 @@ flex-direction:column;
 /* TOPBAR */
 
 .topbar{
-background:var(--maroon);
+background:var(--teal);
 height:70px;
 display:flex;
 align-items:center;
@@ -94,7 +94,7 @@ align-items:center;
 justify-content:center;
 font-weight:700;
 font-size:13px;
-color:var(--maroon);
+color:var(--teal);
 }
 
 /* MAIN */
@@ -178,7 +178,7 @@ cursor:pointer;
 }
 
 .publish{
-background:#1e6c8f;
+background:var(--teal);
 color:white;
 padding:8px 16px;
 border:none;

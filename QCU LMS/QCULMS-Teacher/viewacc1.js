@@ -23,33 +23,51 @@ const fields = [
   ['field-last',        'input-last'],
   ['field-first',       'input-first'],
   ['field-middle',      'input-middle'],
-  ['field-year',        'input-year'],
+  ['field-password', 'input-current-pass'],
 ];
 
 function enterEditMode() {
   fields.forEach(([boxId, inputId]) => {
-    const box   = document.getElementById(boxId);
+    const box = document.getElementById(boxId);
     const input = document.getElementById(inputId);
-    input.value = box.textContent.trim();
-    box.style.display   = 'none';
-    input.style.display = 'flex';
+
+    if (!box || !input) return;
+
+    if (boxId !== 'field-password') {
+      input.value = box.textContent.trim();
+    }
+
+    box.style.display = 'none';
+    input.style.display = 'block';
   });
+
+  document.getElementById("input-new-pass").style.display = "block";
+  document.getElementById("input-confirm-pass").style.display = "block";
+  
   editActions.style.display = 'flex';
   editBtn.classList.add('active');
-  editBtn.title = 'Editing…';
 }
 
 function exitEditMode(save) {
   fields.forEach(([boxId, inputId]) => {
-    const box   = document.getElementById(boxId);
+    const box = document.getElementById(boxId);
     const input = document.getElementById(inputId);
-    if (save) box.textContent = input.value.trim() || box.textContent;
-    box.style.display   = 'flex';
+
+    if (!box || !input) return;
+
+    if (save && boxId !== 'field-password') {
+      box.textContent = input.value.trim() || box.textContent;
+    }
+
+    box.style.display = 'flex';
     input.style.display = 'none';
   });
+
+  document.getElementById("input-new-pass").style.display = "none";
+  document.getElementById("input-confirm-pass").style.display = "none";
+  
   editActions.style.display = 'none';
   editBtn.classList.remove('active');
-  editBtn.title = 'Edit profile';
 }
 
 editBtn.addEventListener('click', () => {
@@ -59,6 +77,7 @@ editBtn.addEventListener('click', () => {
     enterEditMode();
   }
 });
+
 
 btnCancel.addEventListener('click', () => exitEditMode(false));
 btnSave.addEventListener('click',   () => exitEditMode(true));
