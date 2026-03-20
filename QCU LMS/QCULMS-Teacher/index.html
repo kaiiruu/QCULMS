@@ -3,13 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QCU LMS</title>
-
+<title>QCU LMS - Login</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
+<style>
+.role-overlay {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  background: rgba(10,22,36,0.80); backdrop-filter: blur(12px);
+  align-items: center; justify-content: center;
+}
+.role-overlay.active { display: flex; animation: roFadeIn 0.28s ease; }
+.role-card {
+  background: #fff; border-radius: 28px;
+  padding: 52px 56px 48px; width: 620px; max-width: 94vw;
+  text-align: center; box-shadow: 0 48px 120px rgba(0,0,0,0.38);
+  animation: roSlideUp 0.3s ease; border-top: 5px solid #1a4a6b;
+}
+.role-logo-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 22px; }
+.role-logo-row img { height: 50px; }
+.role-brand { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #1a4a6b; letter-spacing: 1px; }
+.role-brand em { color: #C9873A; font-style: normal; }
+.role-heading { font-family: 'Playfair Display', serif; font-size: 26px; color: #1a1a1a; font-weight: 700; margin-bottom: 8px; }
+.role-sub { font-size: 13px; color: #aaa; margin-bottom: 38px; font-family: 'Poppins', sans-serif; font-weight: 300; }
+.role-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 34px; }
+.role-tile {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 30px 14px 26px; border: 2px solid #e4dfd7; border-radius: 20px;
+  background: #f9f6f2; cursor: pointer; transition: all 0.22s ease;
+  text-decoration: none; position: relative; overflow: hidden;
+}
+.role-tile:hover { border-color: #1a4a6b; background: #f0f6fc; transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,74,107,0.16); }
+.role-tile:hover .tile-top-bar { opacity: 1; }
+.role-tile:hover .tile-icon { transform: scale(1.12); }
+.tile-top-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #1a4a6b; border-radius: 20px 20px 0 0; opacity: 0; transition: opacity 0.22s; }
+.tile-icon { font-size: 46px; line-height: 1; transition: transform 0.22s; }
+.tile-label { font-size: 15px; font-weight: 700; color: #1a1a1a; font-family: 'Poppins', sans-serif; }
+.tile-desc { font-size: 11px; color: #bbb; line-height: 1.5; text-align: center; font-family: 'Poppins', sans-serif; }
+.role-close-row { display: flex; justify-content: center; }
+.role-close-btn { background: none; border: none; cursor: pointer; font-size: 13px; color: #bbb; font-family: 'Poppins', sans-serif; text-decoration: underline; text-underline-offset: 3px; transition: color 0.18s; }
+.role-close-btn:hover { color: #1a4a6b; }
+@keyframes roFadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes roSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 560px) {
+  .role-grid { grid-template-columns: 1fr; }
+  .role-tile { flex-direction: row; padding: 18px 20px; gap: 16px; }
+  .tile-icon { font-size: 36px; flex-shrink: 0; }
+  .tile-desc { display: none; }
+  .role-card { padding: 36px 24px 32px; }
+}
+</style>
 </head>
-
 <body>
 
 <header>
@@ -17,7 +60,6 @@
         <img src="image/logo.png" class="logo" alt="Logo">
         <h1 class="brand">QCU LMS</h1>
     </div>
-
     <nav>
         <ul>
             <li><a href="#">About us</a></li>
@@ -28,31 +70,66 @@
     </nav>
 </header>
 
-<section class="hero">
+<section class="login">
     <div class="overlay"></div>
-
-    <div class="hero-content">
-        <p class="subtitle">// Experience the best learning solutions</p>
-
-        <h2>
-            Where Creativity<br>
-            Meets Cutting - Edge<br>
-            Technology
-        </h2>
-
-        <p class="description">
-            QCU LMS is Quezon City University's all-in-one digital learning
-            platform designed to make education more accessible,
-            interactive, and efficient for students and faculty.
-        </p>
-
-        <button class="login-btn" id="loginBtn">Log In</button>
+    <div class="login-card">
+        <button class="back-btn" onclick="history.back()">&#9664;</button>
+        <h2>Welcome QCIAN!</h2>
+        <p class="card-subtitle">👨‍🏫 Teacher Login</p>
+        <input type="text" placeholder="Employee Number" class="input-field">
+        <input type="text" placeholder="User ID" class="input-field">
+        <input type="password" placeholder="Password" class="input-field">
+        <button class="login-btn" onclick="window.location.href='QCULMS-Teacher/index.html'">LOG IN</button>
     </div>
 </section>
 
-<footer>
-    -- QUEZON CITY UNIVERSITY --
-</footer>
-<script src="script.js"></script>
+<footer>-- QUEZON CITY UNIVERSITY --</footer>
+
+<!-- ══ ROLE OVERLAY ══ -->
+<div class="role-overlay" id="role-overlay">
+  <div class="role-card">
+    <div class="role-logo-row">
+      <img src="image/logo.png" alt="QCU Logo">
+      <span class="role-brand">QCU <em>LMS</em></span>
+    </div>
+    <div class="role-heading">Who are you?</div>
+    <div class="role-sub">Select your role to continue</div>
+    <div class="role-grid">
+      <a class="role-tile" href="login.html">
+        <div class="tile-top-bar"></div>
+        <span class="tile-icon">🎓</span>
+        <span class="tile-label">Student</span>
+        <span class="tile-desc">Access classes, activities &amp; grades</span>
+      </a>
+      <a class="role-tile" href="loginteacher.html">
+        <div class="tile-top-bar"></div>
+        <span class="tile-icon">👨‍🏫</span>
+        <span class="tile-label">Teacher</span>
+        <span class="tile-desc">Manage courses, quizzes &amp; students</span>
+      </a>
+      <a class="role-tile" href="loginadmin.html">
+        <div class="tile-top-bar"></div>
+        <span class="tile-icon">🛡️</span>
+        <span class="tile-label">Admin</span>
+        <span class="tile-desc">System settings &amp; user management</span>
+      </a>
+    </div>
+    <div class="role-close-row">
+      <button class="role-close-btn" id="role-close-btn">✕ Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('role-close-btn').addEventListener('click', function() {
+    document.getElementById('role-overlay').classList.remove('active');
+  });
+  document.getElementById('role-overlay').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('active');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('role-overlay').classList.remove('active');
+  });
+</script>
 </body>
 </html>
