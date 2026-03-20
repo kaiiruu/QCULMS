@@ -22,7 +22,7 @@ function fillMeta() {
   const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
   const metaText = `<span class="day-label">${days[now.getDay()]}</span>  ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()} | ${h}:${m} ${ampm}`;
   document.getElementById('assign-meta-1').innerHTML = metaText;
-  document.getElementById('assign-meta-2').innerHTML = metaText;
+  const m2 = document.getElementById('assign-meta-2'); if (m2) m2.innerHTML = metaText;
 }
 fillMeta();
 setInterval(fillMeta, 1000);

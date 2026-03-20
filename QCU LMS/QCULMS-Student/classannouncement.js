@@ -30,7 +30,7 @@ function postComment() {
   const item = document.createElement('div');
   item.className = 'posted-comment-item';
   item.innerHTML = `
-    <div class="commenter-avatar" style="width:36px;height:36px;border-radius:50%;background:#8B0000;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;">J</div>
+    <div class="commenter-avatar" style="width:36px;height:36px;border-radius:50%;background:#1a4a6b;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;">J</div>
     <div class="posted-bubble">
       <div class="c-name">Jheriemy Araullo</div>
       ${text}

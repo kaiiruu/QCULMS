@@ -79,3 +79,112 @@ photoInput.addEventListener('change', (e) => {
   };
   reader.readAsDataURL(file);
 });
+// ── PASSWORD SECTION ──
+const passwordToggleBtn = document.getElementById('password-toggle-btn');
+const passwordDisplay   = document.getElementById('password-display');
+const passwordForm      = document.getElementById('password-form');
+const pwCancel          = document.getElementById('pw-cancel');
+const pwSave            = document.getElementById('pw-save');
+const pwCurrent         = document.getElementById('pw-current');
+const pwNew             = document.getElementById('pw-new');
+const pwConfirm         = document.getElementById('pw-confirm');
+const pwStrength        = document.getElementById('pw-strength');
+const pwMatchMsg        = document.getElementById('pw-match-msg');
+const pwToast           = document.getElementById('pw-toast');
+
+// Toggle form
+passwordToggleBtn.addEventListener('click', () => {
+  const isOpen = passwordForm.style.display !== 'none';
+  if (isOpen) {
+    closePasswordForm();
+  } else {
+    openPasswordForm();
+  }
+});
+
+function openPasswordForm() {
+  passwordDisplay.style.display = 'none';
+  passwordForm.style.display    = 'block';
+  passwordToggleBtn.classList.add('active');
+  pwCurrent.value = '';
+  pwNew.value     = '';
+  pwConfirm.value = '';
+  pwStrength.textContent  = '';
+  pwStrength.className    = 'pw-strength';
+  pwMatchMsg.textContent  = '';
+  pwMatchMsg.className    = 'pw-match-msg';
+  setTimeout(() => pwCurrent.focus(), 50);
+}
+
+function closePasswordForm() {
+  passwordDisplay.style.display = 'block';
+  passwordForm.style.display    = 'none';
+  passwordToggleBtn.classList.remove('active');
+}
+
+pwCancel.addEventListener('click', closePasswordForm);
+
+// Password strength checker
+pwNew.addEventListener('input', () => {
+  const val = pwNew.value;
+  if (!val) { pwStrength.textContent = ''; pwStrength.className = 'pw-strength'; return; }
+  const strong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$/.test(val);
+  const fair   = /^(?=.*[a-zA-Z])(?=.*\d).{6,}$/.test(val);
+  if (strong) {
+    pwStrength.textContent = '● Strong';
+    pwStrength.className   = 'pw-strength strong';
+  } else if (fair) {
+    pwStrength.textContent = '● Fair';
+    pwStrength.className   = 'pw-strength fair';
+  } else {
+    pwStrength.textContent = '● Weak — add numbers, symbols & uppercase';
+    pwStrength.className   = 'pw-strength weak';
+  }
+  checkMatch();
+});
+
+// Confirm match checker
+pwConfirm.addEventListener('input', checkMatch);
+function checkMatch() {
+  if (!pwConfirm.value) { pwMatchMsg.textContent = ''; pwMatchMsg.className = 'pw-match-msg'; return; }
+  if (pwNew.value === pwConfirm.value) {
+    pwMatchMsg.textContent = '✓ Passwords match';
+    pwMatchMsg.className   = 'pw-match-msg match';
+  } else {
+    pwMatchMsg.textContent = '✗ Passwords do not match';
+    pwMatchMsg.className   = 'pw-match-msg no-match';
+  }
+}
+
+// Show/hide password toggle (eye buttons)
+document.querySelectorAll('.pw-eye').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const input = document.getElementById(btn.dataset.target);
+    if (input.type === 'password') {
+      input.type  = 'text';
+      btn.textContent = '🙈';
+    } else {
+      input.type  = 'password';
+      btn.textContent = '👁';
+    }
+  });
+});
+
+// Save password
+pwSave.addEventListener('click', () => {
+  if (!pwCurrent.value) { pwCurrent.focus(); pwCurrent.style.borderColor = '#c0392b'; return; }
+  if (!pwNew.value)     { pwNew.focus();     pwNew.style.borderColor     = '#c0392b'; return; }
+  if (pwNew.value !== pwConfirm.value) {
+    pwConfirm.focus(); pwConfirm.style.borderColor = '#c0392b'; return;
+  }
+  // Success
+  closePasswordForm();
+  // Show toast
+  pwToast.classList.add('show');
+  setTimeout(() => pwToast.classList.remove('show'), 3000);
+});
+
+// Reset red borders on input
+[pwCurrent, pwNew, pwConfirm].forEach(inp => {
+  inp.addEventListener('input', () => inp.style.borderColor = '');
+});

@@ -1,8 +1,8 @@
 :root {
-  --maroon: #8B0000;
-  --maroon-dark: #6a0000;
-  --gold: #C9A84C;
-  --gold-light: #f0d080;
+  --maroon: #1a4a6b;
+  --maroon-dark: #133a56;
+  --gold: #C9873A;
+  --gold-light: #f0c090;
   --bg: #f5f4f2;
   --text: #1a1a1a;
   --text-muted: #888;
@@ -92,7 +92,7 @@ body {
   cursor: pointer; font-size: 14px; font-weight: 500; color: #555; transition: all 0.18s;
 }
 .nav-item:hover { background: #fdf5e6; color: var(--maroon); }
-.nav-item.active { background: var(--maroon); color: #fff; box-shadow: 0 4px 14px rgba(139,0,0,0.25); }
+.nav-item.active { background: var(--maroon); color: #fff; box-shadow: 0 4px 14px rgba(26,74,107,0.25); }
 .nav-item.active .nav-icon { color: var(--gold); }
 .nav-icon { font-size: 20px; width: 24px; text-align: center; }
 .nav-item .chevron { margin-left: auto; font-size: 11px; color: rgba(255,255,255,0.7); }
@@ -210,7 +210,7 @@ body {
   font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text);
   outline: none; transition: border-color 0.2s, box-shadow 0.2s;
 }
-.comment-input:focus { border-color: var(--maroon); box-shadow: 0 0 0 3px rgba(139,0,0,0.08); background: #fff; }
+.comment-input:focus { border-color: var(--maroon); box-shadow: 0 0 0 3px rgba(26,74,107,0.08); background: #fff; }
 
 .comment-send {
   width: 36px; height: 36px; border-radius: 50%;
@@ -280,7 +280,7 @@ body {
   font-size: 14px; font-weight: 700;
   font-family: 'DM Sans', sans-serif; cursor: pointer;
   transition: background 0.18s;
-  box-shadow: 0 4px 14px rgba(139,0,0,0.2);
+  box-shadow: 0 4px 14px rgba(26,74,107,0.2);
 }
 .btn-answer-quiz:hover { background: var(--maroon-dark); }
 
@@ -316,19 +316,19 @@ body {
 /* ── JOIN MODAL ── */
 .join-backdrop {
   display: none; position: fixed; inset: 0;
-  background: rgba(180,80,80,0.35); backdrop-filter: blur(6px);
+  background: rgba(26,74,107,0.35); backdrop-filter: blur(6px);
   z-index: 200; align-items: center; justify-content: center;
 }
 .join-backdrop.active { display: flex; animation: fadeIn 0.2s ease; }
 .join-modal {
-  background: rgba(230,160,160,0.88); backdrop-filter: blur(12px);
+  background: rgba(180,210,230,0.88); backdrop-filter: blur(12px);
   border-radius: 24px; padding: 48px 52px 40px; width: 520px; text-align: center;
   box-shadow: 0 24px 60px rgba(0,0,0,0.2); animation: slideUp 0.25s ease;
   border: 1px solid rgba(255,255,255,0.4);
 }
 .join-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: var(--maroon); margin-bottom: 14px; letter-spacing: 2px; }
 .join-subtitle { font-size: 16px; font-weight: 700; color: var(--maroon); margin-bottom: 8px; }
-.join-hint { font-size: 14px; color: rgba(100,30,30,0.8); margin-bottom: 28px; line-height: 1.5; }
+.join-hint { font-size: 14px; color: rgba(10,40,70,0.8); margin-bottom: 28px; line-height: 1.5; }
 .join-input {
   width: 100%; padding: 16px 20px; border-radius: 12px; border: none;
   background: rgba(255,255,255,0.65); font-size: 15px; font-weight: 600;
@@ -336,10 +336,10 @@ body {
   text-align: center; letter-spacing: 2px; outline: none; margin-bottom: 32px;
   transition: background 0.2s, box-shadow 0.2s;
 }
-.join-input::placeholder { color: rgba(100,30,30,0.45); letter-spacing: 2px; font-weight: 500; }
-.join-input:focus { background: rgba(255,255,255,0.85); box-shadow: 0 0 0 3px rgba(139,0,0,0.2); }
+.join-input::placeholder { color: rgba(10,40,70,0.45); letter-spacing: 2px; font-weight: 500; }
+.join-input:focus { background: rgba(255,255,255,0.85); box-shadow: 0 0 0 3px rgba(26,74,107,0.2); }
 .join-actions { display: flex; justify-content: flex-end; align-items: center; gap: 28px; }
-.join-cancel { background: transparent; border: none; font-size: 16px; font-weight: 600; color: rgba(80,20,20,0.8); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: color 0.18s; padding: 8px 4px; }
+.join-cancel { background: transparent; border: none; font-size: 16px; font-weight: 600; color: rgba(10,40,70,0.8); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: color 0.18s; padding: 8px 4px; }
 .join-cancel:hover { color: var(--maroon); }
 .join-confirm { background: transparent; border: none; font-size: 16px; font-weight: 700; color: var(--maroon); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: color 0.18s; padding: 8px 4px; }
 .join-confirm:hover { color: var(--maroon-dark); }
@@ -398,7 +398,7 @@ body {
   font-size: 14px; font-weight: 700;
   font-family: 'DM Sans', sans-serif; cursor: pointer;
   transition: background 0.18s;
-  box-shadow: 0 4px 14px rgba(139,0,0,0.25);
+  box-shadow: 0 4px 14px rgba(26,74,107,0.25);
   margin-top: 2px;
 }
 .btn-answer-exam:hover { background: var(--maroon-dark); }
@@ -412,7 +412,7 @@ body {
   font-family: 'DM Sans', sans-serif; cursor: pointer;
   transition: background 0.18s;
   margin-bottom: 10px;
-  box-shadow: 0 4px 14px rgba(139,0,0,0.2);
+  box-shadow: 0 4px 14px rgba(26,74,107,0.2);
   animation: fadeUp 0.2s ease;
 }
 .btn-submit-work:hover { background: var(--maroon-dark); }
@@ -502,7 +502,7 @@ body {
   outline: none; margin-bottom: 10px;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-.link-input:focus { border-color: var(--maroon); box-shadow: 0 0 0 3px rgba(139,0,0,0.08); background: #fff; }
+.link-input:focus { border-color: var(--maroon); box-shadow: 0 0 0 3px rgba(26,74,107,0.08); background: #fff; }
 .link-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 6px; }
 .link-cancel {
   background: transparent; border: none; cursor: pointer;

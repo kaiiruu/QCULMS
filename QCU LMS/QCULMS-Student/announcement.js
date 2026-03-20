@@ -49,9 +49,7 @@ addClassBtn.addEventListener('click', () => {
   setTimeout(() => joinInput.focus(), 100);
 });
 
-joinCancel.addEventListener('click', () => {
-  joinBackdrop.classList.remove('active');
-});
+joinCancel.addEventListener('click', () => joinBackdrop.classList.remove('active'));
 
 joinBackdrop.addEventListener('click', e => {
   if (e.target === joinBackdrop) joinBackdrop.classList.remove('active');

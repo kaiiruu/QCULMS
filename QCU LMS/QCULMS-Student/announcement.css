@@ -371,3 +371,53 @@ body {
   .ph-body { font-size: 12px; }
   .post-image-placeholder { padding: 24px 28px; }
 }
+/* ── JOIN CLASS MODAL ── */
+.join-backdrop {
+  display: none; position: fixed; inset: 0;
+  background: rgba(26,74,107,0.35);
+  backdrop-filter: blur(6px);
+  z-index: 200; align-items: center; justify-content: center;
+}
+.join-backdrop.active { display: flex; animation: fadeIn 0.2s ease; }
+
+.join-modal {
+  background: rgba(180,210,230,0.88);
+  backdrop-filter: blur(12px);
+  border-radius: 24px; padding: 48px 52px 40px;
+  width: 520px; text-align: center;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+  animation: slideUp 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.join-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px; font-weight: 700;
+  color: var(--maroon); margin-bottom: 14px; letter-spacing: 2px;
+}
+.join-subtitle { font-size: 16px; font-weight: 700; color: var(--maroon); margin-bottom: 8px; }
+.join-hint { font-size: 14px; color: rgba(10,40,70,0.8); margin-bottom: 28px; line-height: 1.5; }
+
+.join-input {
+  width: 100%; padding: 16px 20px; border-radius: 12px; border: none;
+  background: rgba(255,255,255,0.65); font-size: 15px; font-weight: 600;
+  font-family: 'DM Sans', sans-serif; color: var(--text);
+  text-align: center; letter-spacing: 2px; outline: none;
+  margin-bottom: 32px; transition: background 0.2s, box-shadow 0.2s;
+}
+.join-input::placeholder { color: rgba(10,40,70,0.45); letter-spacing: 2px; font-weight: 500; }
+.join-input:focus { background: rgba(255,255,255,0.85); box-shadow: 0 0 0 3px rgba(26,74,107,0.2); }
+
+.join-actions { display: flex; justify-content: flex-end; align-items: center; gap: 28px; }
+.join-cancel {
+  background: transparent; border: none; font-size: 16px; font-weight: 600;
+  color: rgba(10,40,70,0.8); cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: color 0.18s; padding: 8px 4px;
+}
+.join-cancel:hover { color: var(--maroon); }
+.join-confirm {
+  background: transparent; border: none; font-size: 16px; font-weight: 700;
+  color: var(--maroon); cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: color 0.18s; padding: 8px 4px;
+}
+.join-confirm:hover { color: var(--maroon-dark); }

@@ -130,7 +130,63 @@
     </div>
   </div>
 
+  <!-- PASSWORD SECTION -->
+  <div class="password-section">
+    <div class="password-header">
+      <h3 class="enrolled-title" style="margin-bottom:0;border-bottom:none;">Password</h3>
+      <button class="password-toggle-btn" id="password-toggle-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+        </svg>
+        Change Password
+      </button>
+    </div>
+
+    <!-- PASSWORD DISPLAY (collapsed) -->
+    <div class="password-display" id="password-display">
+      <div class="field-box" style="letter-spacing:4px;color:#aaa;">••••••••</div>
+    </div>
+
+    <!-- PASSWORD FORM (hidden) -->
+    <div class="password-form" id="password-form" style="display:none;">
+      <div class="password-fields">
+        <div class="field-group">
+          <label class="field-label">Current Password</label>
+          <div class="pw-input-wrap">
+            <input class="field-input pw-input" type="password" id="pw-current" placeholder="Enter current password" autocomplete="current-password">
+            <button class="pw-eye" data-target="pw-current" title="Show/hide">👁</button>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">New Password</label>
+          <div class="pw-input-wrap">
+            <input class="field-input pw-input" type="password" id="pw-new" placeholder="Enter new password" autocomplete="new-password">
+            <button class="pw-eye" data-target="pw-new" title="Show/hide">👁</button>
+          </div>
+          <div class="pw-strength" id="pw-strength"></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Confirm New Password</label>
+          <div class="pw-input-wrap">
+            <input class="field-input pw-input" type="password" id="pw-confirm" placeholder="Confirm new password" autocomplete="new-password">
+            <button class="pw-eye" data-target="pw-confirm" title="Show/hide">👁</button>
+          </div>
+          <div class="pw-match-msg" id="pw-match-msg"></div>
+        </div>
+      </div>
+      <div class="edit-actions" style="border-top:1px solid #d4cfc8;margin-top:20px;padding-top:20px;">
+        <button class="btn-cancel" id="pw-cancel">Cancel</button>
+        <button class="btn-save" id="pw-save">Save Password</button>
+      </div>
+    </div>
+
+  </div><!-- /.password-section -->
+
 </div><!-- /.page-wrapper -->
+
+<!-- PASSWORD SUCCESS TOAST -->
+<div class="pw-toast" id="pw-toast">✓ Password updated successfully!</div>
 
 <script src="viewacc.js"></script>
 </body>

@@ -309,14 +309,14 @@ body {
 /* ── JOIN CLASS MODAL ── */
 .join-backdrop {
   display: none; position: fixed; inset: 0;
-  background: rgba(180, 80, 80, 0.35);
+  background: rgba(26,74,107,0.35);
   backdrop-filter: blur(6px);
   z-index: 200; align-items: center; justify-content: center;
 }
 .join-backdrop.active { display: flex; animation: fadeIn 0.2s ease; }
 
 .join-modal {
-  background: rgba(230, 160, 160, 0.88);
+  background: rgba(180,210,230,0.88);
   backdrop-filter: blur(12px);
   border-radius: 24px; padding: 48px 52px 40px;
   width: 520px; text-align: center;

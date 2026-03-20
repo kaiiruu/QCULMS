@@ -106,14 +106,14 @@ function showLinkRow() {
     <input id="inline-link-input" type="url" placeholder="Paste link here..."
       style="flex:1;padding:7px 10px;border:1px solid #e0d8cc;border-radius:8px;font-size:12px;font-family:DM Sans,sans-serif;outline:none;background:#faf8f5;color:#1a1a1a;min-width:0;">
     <button id="inline-link-add"
-      style="background:#8B0000;color:#fff;border:none;border-radius:7px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:DM Sans,sans-serif;">Add</button>
+      style="background:#1a4a6b;color:#fff;border:none;border-radius:7px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:DM Sans,sans-serif;">Add</button>
     <button id="inline-link-cancel"
       style="background:none;border:none;cursor:pointer;color:#888;font-size:18px;padding:2px 4px;" title="Cancel">&#10005;</button>
   `;
   fileList.prepend(linkRowEl);
   const input = document.getElementById('inline-link-input');
   input.focus();
-  input.style.borderColor = '#8B0000';
+  input.style.borderColor = '#1a4a6b';
 
   document.getElementById('inline-link-add').addEventListener('click', confirmLinkRow);
   document.getElementById('inline-link-cancel').addEventListener('click', hideLinkRow);
@@ -134,7 +134,7 @@ function confirmLinkRow() {
   const item = document.createElement('div');
   item.style.cssText = 'display:flex;align-items:center;justify-content:space-between;background:#fdf5e6;border-radius:8px;padding:7px 12px;font-size:13px;margin-bottom:6px;';
   item.innerHTML = `
-    <a href="${url}" target="_blank" style="color:#8B0000;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px;text-decoration:underline;">&#128279; ${label}</a>
+    <a href="${url}" target="_blank" style="color:#1a4a6b;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px;text-decoration:underline;">&#128279; ${label}</a>
     <button onclick="removeFile(this)" style="background:none;border:none;cursor:pointer;color:#888;font-size:16px;padding:0 2px;" title="Remove">&#10005;</button>
   `;
   fileList.appendChild(item);
