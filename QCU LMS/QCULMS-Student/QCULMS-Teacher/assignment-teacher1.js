@@ -285,7 +285,7 @@ modalBackdrop.classList.remove('active');
 }
 
 if(modalConfirm){
-modalConfirm.addEventListener('click',()=>window.location.href='index.html');
+modalConfirm.addEventListener('click',()=>window.location.href='../index.html');
 }
 
 

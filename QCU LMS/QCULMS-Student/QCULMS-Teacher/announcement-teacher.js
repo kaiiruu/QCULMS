@@ -105,7 +105,7 @@ modalCancel.addEventListener('click', () => modalBackdrop.classList.remove('acti
 modalBackdrop.addEventListener('click', e => {
   if (e.target === modalBackdrop) modalBackdrop.classList.remove('active');
 });
-modalConfirm.addEventListener('click', () => window.location.href = 'index.html');
+modalConfirm.addEventListener('click', () => window.location.href = '../index.html');
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     modalBackdrop.classList.remove('active');
